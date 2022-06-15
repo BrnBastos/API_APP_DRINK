@@ -35,6 +35,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
+    //Constantes dos elementos da layout + conexao da API
     private final String URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
     private Retrofit retrofitDrink;
     private EditText NameDrink;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //Definindo os valores para as variáveis dos elementos da layout
         NameDrink = findViewById(R.id.NameDrink);
         txtnameDrink = findViewById(R.id.txtnameDrink);
         nomeIntrucoes = findViewById(R.id.nomeInstrucoes);
@@ -63,10 +64,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             getSupportLoaderManager().initLoader(0, null, this);
         }
     }
+    //Método que irá trazer os dados dos Drinks de acordo com que foi digitado no campo 
     public void buscaDrinks(View view) {
         // Recupera a string de busca.
         String queryString = NameDrink.getText().toString();
-        // esconde o teclado qdo o botão é clicado
+        // esconde o teclado quando o botão é clicado
         InputMethodManager inputManager = (InputMethodManager)
                 getSystemService(Context.INPUT_METHOD_SERVICE);
         if (inputManager != null) {
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             Bundle queryBundle = new Bundle();
             queryBundle.putString("queryString", queryString);
             getSupportLoaderManager().restartLoader(0, queryBundle, this);
+            //Altera para "carregando" enquanto a API faz seu processo
             nomeIntrucoes.setText(R.string.str_empty);
             txtnameDrink.setText(R.string.loading);
         }
@@ -104,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
     @NonNull
     @Override
+    //Cria o Loader para tarefa, recebendo o termo da busca
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
         String queryString = "";
         if (args != null) {
@@ -150,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 //nmLivro.setText(R.string.str_empty);
             } else {
-                // If none are found, update the UI to show failed results.
+                // Caso nada for encontrado, os itens ficarão vazios
                 txtnameDrink.setText(R.string.no_results);
                 nomeIntrucoes.setText(R.string.str_empty);
             }
