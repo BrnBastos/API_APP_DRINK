@@ -30,7 +30,7 @@ public class NetworkUtils {
     
     //Utilizado para adaptar o arquivo JSON recebido
     static String buscaInfosLivro(String queryString) {
-        qq
+
         HttpURLConnection urlConnection = null;
         //Permite a leitura de texto por meio de uma abertura de transmissão (inputStream)
         BufferedReader reader = null;

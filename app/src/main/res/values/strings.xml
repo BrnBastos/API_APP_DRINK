@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">ShowDrink1</string>
-    <string name="TextView_TelaMain_escreva">Escreva o nome de um drink</string>
+    <string name="TextView_TelaMain_escreva">Write the name of a drink</string>
     <string name="loading">Carregando…</string>
-
+    <string name="logout">Exit</string>
     <string name="no_results">"Nenhum resultado encontrado"</string>
 
     <string name="no_search_term">Informe um termo de busca</string>
 
     <string name="no_network">verifique sua conexão.</string>
     <string name="str_empty">" "</string>
-    <string name="appwidget_text">EXAMPLE</string>
+    <string name="appwidget_text">Show a Drink</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
 </resources>

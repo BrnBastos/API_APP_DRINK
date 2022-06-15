@@ -7,13 +7,28 @@
     android:background="@color/fundo_tela"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="How to prepare:"
+        android:textColor="@color/buttons"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
+
     <Button
         android:id="@+id/button2"
-        android:layout_width="75dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
         android:backgroundTint="@color/buttons"
         android:fontFamily="sans-serif-black"
-        android:text="SAIR"
+        android:text="@string/logout"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,10 +43,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293"
+        app:layout_constraintVertical_bias="0.242"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -70,25 +85,27 @@
         android:fontFamily="sans-serif-medium"
         android:text="@string/TextView_TelaMain_escreva"
         android:textSize="18dp"
+        android:textColor="@color/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.666" />
 
     <TextView
         android:id="@+id/nomeInstrucoes"
-        android:layout_width="245dp"
-        android:layout_height="310dp"
+        android:layout_width="292dp"
+        android:layout_height="197dp"
         android:text=""
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="0.513" />
 
     <ImageButton
         android:id="@+id/imageButton"

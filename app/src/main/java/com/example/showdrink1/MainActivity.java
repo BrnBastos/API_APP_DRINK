@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private ImageView ImageViewFotoDrink;
     private TextView txtnameDrink;
     private TextView nomeIntrucoes;
-    private Button btnConsultarDrink;
+    private Button btnConsultarDrink, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
+
+        logout = findViewById(R.id.button2);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
     //Método que irá trazer os dados dos Drinks de acordo com que foi digitado no campo 
     public void buscaDrinks(View view) {
@@ -148,6 +156,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
             //mostra o resultado qdo possivel.
             if (nome != null && instrucao != null) {
+
+
                 txtnameDrink.setText(nome);
                 nomeIntrucoes.setText(instrucao);
                 ImageViewFotoDrink.setImageURI(Uri.parse(imgDrink));
