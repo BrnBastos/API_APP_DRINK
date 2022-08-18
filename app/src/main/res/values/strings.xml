@@ -10,6 +10,8 @@
     <string name="no_network">verifique sua conexão.</string>
     <string name="str_empty">" "</string>
     <string name="appwidget_text">Show a Drink</string>
+
+    <string name="tela_splash_texto">Show Me A Drink</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
 </resources>

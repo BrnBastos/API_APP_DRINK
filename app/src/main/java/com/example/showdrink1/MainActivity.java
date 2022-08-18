@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         //Definindo os valores para as variáveis dos elementos da layout
         NameDrink = findViewById(R.id.NameDrink);
         txtnameDrink = findViewById(R.id.txtnameDrink);
