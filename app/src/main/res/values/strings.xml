@@ -10,8 +10,14 @@
     <string name="no_network">verifique sua conexão.</string>
     <string name="str_empty">" "</string>
     <string name="appwidget_text">Show a Drink</string>
-
+    <string name="txt_search">Search a drink</string>
     <string name="tela_splash_texto">Show Me A Drink</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+    <string name="description_logo">App Logo</string>
+    <string name="description_search">Search button</string>
+    <string name="description_historic">Historic Button</string>
+    <string name="how_to_prepare">How to prepare:</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="namedrink">Drink:</string>
 </resources>
