@@ -13,10 +13,12 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,10 +41,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private final String URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
     private Retrofit retrofitDrink;
     private EditText NameDrink;
-    private ImageView ImageViewFotoDrink;
+    //private ImageView ImageViewFotoDrink;
     private TextView txtnameDrink;
     private TextView nomeIntrucoes;
-    private Button btnConsultarDrink, logout;
+    private ImageButton btnConsultarDrink;
+    private Button logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,23 +56,41 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         NameDrink = findViewById(R.id.NameDrink);
         txtnameDrink = findViewById(R.id.txtnameDrink);
         nomeIntrucoes = findViewById(R.id.nomeInstrucoes);
-        ImageViewFotoDrink = findViewById(R.id.ImageViewFotoDrink);
+        //ImageViewFotoDrink = findViewById(R.id.ImageViewFotoDrink);
        /*retrofitDrink = new Retrofit.Builder()
                 .baseUrl(URL) //endereço do webservice
                 .addConverterFactory(GsonConverterFactory.create()) //conversor
                 .build();*/
 
-        Button btnConsultarDrink = (Button) findViewById(R.id.btnConsultarDrink);
+        ImageButton btnConsultarDrink = (ImageButton) findViewById(R.id.btnConsultarDrink);
 
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
 
-        logout = findViewById(R.id.button2);
+        /*logout = findViewById(R.id.button2);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });*/
+
+        this.NameDrink = findViewById(R.id.NameDrink);
+
+        this.NameDrink.setOnKeyListener(new View.OnKeyListener() {
+            @Override            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+
+                    if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
+                        btnConsultarDrink.performClick();
+                        //buscaDrinks(NameDrink);
+                        return true;
+                    }
+
+                }
+                return false;
             }
         });
     }
@@ -161,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 txtnameDrink.setText(nome);
                 nomeIntrucoes.setText(instrucao);
-                ImageViewFotoDrink.setImageURI(Uri.parse(imgDrink));
+                //ImageViewFotoDrink.setImageURI(Uri.parse(imgDrink));
 
                 //nmLivro.setText(R.string.str_empty);
             } else {
@@ -182,75 +203,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
     }
-        /* btnConsultarDrink.setOnClickListener(new View.OnClickListener() {
-           @Override
-            public void onClick(View v) {
-
-                consultarDrink();
-
-            }
-
-        });
-    }
-
-    private void consultarDrink() {
-
-        // Verifica o status da conexão de rede
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = null;
-        if (connMgr != null) {
-            networkInfo = connMgr.getActiveNetworkInfo();
-        }
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            //pega nickname
-            String Drink = NameDrink.getText().toString().trim();
-
-            String link = URL + Drink;
-
-            //instanciando a interface
-            RESTService restService = retrofitDrink.create(RESTService.class);
-
-            //passando os dados para consulta
-            Call<DrinkGit> call = restService.consultaDrink(Drink);
-            //Log.i("Link da Consulta", link);
-
-            call.enqueue(new Callback<DrinkGit>() {
-                @Override
-                public void onResponse(Call<DrinkGit> call, Response<DrinkGit> response) {
-                    if (response.isSuccessful()) {
-                        DrinkGit drinkGit = response.body();
-
-                        //mostra foto via url
-                        Picasso.get().load(drinkGit.getStrDrinkThumb()).transform(new CropCircleTransformation()).into(ImageViewFotoDrink);
-
-                            txtnameDrink.setText(drinkGit.getStrDrink());
-                            nameCategory.setText(drinkGit.getStrCategory());
-
-                        Toast.makeText(getApplicationContext(), "Drink encontrado", Toast.LENGTH_LONG).show();
-                    } else {
-                        //alert para dizer que deu erro
-                        //erro de limiti de pesquisas- Limite de 60 por hora
-                        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-                        alert.setTitle("Ops :/");
-                        alert.setMessage("Drink não encontrado");
-                        alert.setPositiveButton("OK", null);
-                        alert.show();
-
-                        onPause();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<DrinkGit> call, Throwable t) {
-                    Toast.makeText(getApplicationContext(), "Ocorreu um erro ao tentar consultar o Drink. Erro: " + t.getMessage(), Toast.LENGTH_LONG).show();
-                }
-            });
-        }
-        else{
-            Toast.makeText(getApplicationContext(), "Sem Conexão", Toast.LENGTH_LONG).show();
-        }*/
 
 
     }
