@@ -28,13 +28,13 @@
         android:fontFamily="@font/gugi"
         android:text="@string/how_to_prepare"
         android:textColor="@color/buttons"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
+        app:layout_constraintVertical_bias="0.649"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -109,31 +109,15 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="55dp"
-        android:layout_height="62dp"
-        android:background="@color/buttons"
-        android:backgroundTint="@color/fundo_tela"
-        android:contentDescription="@string/description_historic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062"
-        app:srcCompat="@android:drawable/ic_menu_recent_history"
-        tools:ignore="ImageContrastCheck,RedundantDescriptionCheck" />
+        app:layout_constraintVertical_bias="0.945" />
 
     <TextView
         android:id="@+id/txtnameDrink"
-        android:layout_width="239dp"
-        android:layout_height="33dp"
+        android:layout_width="248dp"
+        android:layout_height="38dp"
         android:fontFamily="@font/gugi"
         android:text=""
         android:textSize="30sp"
@@ -161,46 +145,67 @@
         app:srcCompat="@drawable/ic_search"
         tools:ignore="ImageContrastCheck,RedundantDescriptionCheck" />
 
-    <LinearLayout
-        android:layout_width="219dp"
-        android:layout_height="100dp"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="188dp"
+        android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.605">
+        app:layout_constraintVertical_bias="0.592">
 
-        <TextView
-            android:id="@+id/txtingredient1"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtingredient2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/txtingredient1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/txtingredient3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/txtingredient2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/txtingredient4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp" />
+            <TextView
+                android:id="@+id/txtingredient3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/txtingredient5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txtingredient4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/txtingredient5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="53dp"
+        android:layout_height="64dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/map"
+        android:onClick="MostrarLoc"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043"
+        app:srcCompat="@drawable/ic_baseline_map_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
