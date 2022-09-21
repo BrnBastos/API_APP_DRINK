@@ -10,9 +10,11 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -39,6 +41,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.showdrink1.views.CustomView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     //private ImageView ImageViewFotoDrink;
     private TextView txtnameDrink, nomeIntrucoes, ingredient1, ingredient2, ingredient3, ingredient4,
     ingredient5;
-    private ImageButton btnConsultarDrink;
+    private ImageButton btnConsultarDrink, btnadd;
     private Button logout;
 
     //localização do usuario
@@ -72,14 +76,20 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     Vibrator vibrar;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
+
         //chamando os componentes
         Componentes();
+        CustomView customView = new CustomView(this);
+
+
+
 
         //adicionando o sensor
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -144,6 +154,15 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 }
                 return false;
+            }
+        });
+
+        btnadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent add = new Intent(getApplicationContext(), AddDrinkActivity.class);
+                startActivity(add);
             }
         });
     }
@@ -409,6 +428,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         ingredient4 = findViewById(R.id.txtingredient4);
         ingredient5 = findViewById(R.id.txtingredient5);
         nomeIntrucoes = findViewById(R.id.nomeInstrucoes);
+        btnadd =  findViewById(R.id.imgbtnadd);
         //Localização
         locationMangaer = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     }

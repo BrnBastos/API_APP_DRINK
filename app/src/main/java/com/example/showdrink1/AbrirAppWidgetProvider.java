@@ -10,7 +10,7 @@ import android.widget.RemoteViews;
 /**
  * Implementation of App Widget functionality.
  */
-public class AbrirHistoricoWidget extends AppWidgetProvider {
+public class AbrirAppWidgetProvider extends AppWidgetProvider {
 
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
@@ -24,7 +24,7 @@ public class AbrirHistoricoWidget extends AppWidgetProvider {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
             // Coloca o armazenamento no botão para realizar sua tarefa
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.abrir_historico_widget);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.abrir_app_widget);
             views.setOnClickPendingIntent(R.id.appwidget_button, pendingIntent);
 
             // Faz a atualização dos dados da widget pela sua Id

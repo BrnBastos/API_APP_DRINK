@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">ShowDrink1</string>
     <string name="TextView_TelaMain_escreva">Write the name of a drink</string>
-    <string name="loading">Carregando…</string>
+    <string name="loading">Loading…</string>
     <string name="logout">Exit</string>
-    <string name="no_results">"Nenhum resultado encontrado"</string>
+    <string name="no_results">"no results found"</string>
 
-    <string name="no_search_term">Informe um termo de busca</string>
+    <string name="no_search_term">Enter a search term</string>
 
-    <string name="no_network">verifique sua conexão.</string>
+    <string name="no_network">check your connection</string>
     <string name="str_empty">" "</string>
     <string name="appwidget_text">Show a Drink</string>
     <string name="txt_search">Search a drink</string>
@@ -20,5 +20,11 @@
     <string name="how_to_prepare">How to prepare:</string>
     <string name="ingredients">Ingredients:</string>
     <string name="namedrink">Drink:</string>
+    <string name="instructions">Instructions:</string>
     <string name="map">GPS</string>
+    <string name="adddrink">Add a Drink!!</string>
+    <string name="backtohome">Back to home</string>
+
+
+
 </resources>

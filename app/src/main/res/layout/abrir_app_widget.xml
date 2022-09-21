@@ -12,8 +12,10 @@
             style="@style/Widget.ShowDrink1.AppWidget.InnerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/buttons"
             android:contentDescription="@string/appwidget_text"
             android:text="@string/appwidget_text"
+            android:textColor="@color/fundo_tela"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
 

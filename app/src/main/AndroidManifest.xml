@@ -20,6 +20,13 @@
         android:theme="@style/Theme.ShowDrink1"
         tools:targetApi="31">
         <activity
+            android:name=".AddDrinkActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activity_Splash"
             android:exported="true">
             <intent-filter>
@@ -30,7 +37,7 @@
         </activity>
 
         <receiver
-            android:name=".AbrirHistoricoWidget"
+            android:name=".AbrirAppWidgetProvider"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -38,7 +45,7 @@
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/abrir_historico_widget_info" />
+                android:resource="@xml/abrir_app_widget_info" />
         </receiver>
 
         <activity
@@ -49,8 +56,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-
             </intent-filter>
         </activity>
 
