@@ -88,6 +88,7 @@
         android:inputType="textPersonName"
         android:text=""
         android:textColor="@color/buttons"
+        android:textColorHint="#8D6E63"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -199,7 +200,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043"
-        app:srcCompat="@drawable/ic_baseline_map_24" />
+        app:srcCompat="@drawable/ic_baseline_map_24"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/imgbtnadd"
@@ -214,7 +216,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043"
-        app:srcCompat="@drawable/button_add" />
+        app:srcCompat="@drawable/button_add"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageButton
         android:id="@+id/btnConsultarDrink"
