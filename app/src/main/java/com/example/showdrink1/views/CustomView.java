@@ -40,6 +40,6 @@ public class CustomView extends View {
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawColor(Color.RED);
+        canvas.drawColor(Color.WHITE);
     }
 }
