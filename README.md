@@ -7,3 +7,4 @@ Também deve buscar dados da nossa api que foi criada.
 Outras funções como sensor, geolocalização também estão inclusas no app.
 
 Link da api externa: https://www.thecocktaildb.com
+Link da api criada: https://github.com/arthurrenan00/API_DRINK
